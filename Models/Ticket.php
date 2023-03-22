@@ -106,7 +106,7 @@ class Ticket extends Model
                 ->orderBy('created_at','desc')->get()->first();
 
             $user = $comment->isOperator() ?  'operatore' : 'partner';
-            $time = $this->last_commented_at->diffForHumans();
+            $time = Carbon::parse($this->last_commented_at)->diffForHumans();
 
             return "<em>$time</em><br><strong>$user</strong>: ".Str::limit(html_entity_decode(strip_tags($comment->content)),80, '...');
         }

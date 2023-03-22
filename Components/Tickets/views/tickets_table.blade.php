@@ -122,8 +122,12 @@
                         {{--                <td>{{ $ticket->updated_at->diffForHumans() }}</td>--}}
                         <td>{{ $ticket->created_at->diffForHumans() }}</td>
 
-                        <td class="small">@if($ticket->status === 'open') {{ @$ticket->sla_charge_expiring->diffForHumans(['parts' => 2])  }}<br> @endif @if(in_array($ticket->status, ["assigned", "awaiting","closed"]))Assegnato in: {{ @$ticket->sla_charge_processing }}min @endif</td>
-                        <td class="small">@if($ticket->status !== 'closed'){{ @$ticket->sla_expiring->diffForHumans(['parts' => 2])  }} @else Chiuso in: {{ \Carbon\CarbonInterval::minutes(@$ticket->sla_processing)->cascade()->forHumans(['options' => \Carbon\CarbonInterface::NO_ZERO_DIFF,'syntax' => \Carbon\CarbonInterface::DIFF_ABSOLUTE]) }} @endif </td>
+                        <td class="small">
+{{--                            @if($ticket->status === 'open') {{ @$ticket->sla_charge_expiring->diffForHumans(['parts' => 2])  }}<br> @endif @if(in_array($ticket->status, ["assigned", "awaiting","closed"]))Assegnato in: {{ @$ticket->sla_charge_processing }}min @endif--}}
+                        </td>
+                        <td class="small">
+{{--                            @if($ticket->status !== 'closed'){{ @$ticket->sla_expiring->diffForHumans(['parts' => 2])  }} @else Chiuso in: {{ \Carbon\CarbonInterval::minutes(@$ticket->sla_processing)->cascade()->forHumans(['options' => \Carbon\CarbonInterface::NO_ZERO_DIFF,'syntax' => \Carbon\CarbonInterface::DIFF_ABSOLUTE]) }} @endif --}}
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>

@@ -45,3 +45,13 @@ if (!function_exists('stats_ticket_sum')) {
     }
 }
 
+if (!function_exists('bool_to_str')) {
+    function bool_to_str($bool)
+    {
+        if ($bool) {
+            return strtoupper(__('true'));
+        }
+        return strtoupper(__('false'));
+    }
+}
+

@@ -73,8 +73,12 @@
                                 <x-rpd::icon name="edit" target="assign" />
                             @endif
                         </p>
-                        <p class="mb-1"> <strong>{{ __('global.created') }}</strong>: {{ $ticket->created_at->diffForHumans() }} <small class="text-gray-500">({{ $ticket->created_at->format('d/m/Y H:i:s') }})</small></p>
-                        <p class="mb-1"> <strong>{{ __('global.last_update') }}</strong>: {{ $ticket->last_commented_at->diffForHumans() }} <small class="text-gray-500">({{ $ticket->updated_at->format('d/m/Y H:i:s') }})</small></p>
+                        <p class="mb-1"> <strong>{{ __('global.created') }}</strong>:
+{{--                            {{ $ticket->created_at->diffForHumans() }} --}}
+                            <small class="text-gray-500">({{ $ticket->created_at->format('d/m/Y H:i:s') }})</small></p>
+                        <p class="mb-1"> <strong>{{ __('global.last_update') }}</strong>:
+{{--                            {{ $ticket->last_commented_at->diffForHumans() }}--}}
+                            <small class="text-gray-500">({{ $ticket->updated_at->format('d/m/Y H:i:s') }})</small></p>
 
 
                         <div class="border p-2 bg-uania">
@@ -166,7 +170,9 @@
 
                     <div class="card-header d-flex justify-content-between align-items-baseline flex-wrap @if($comment->isMine()) bg-secondary text-white @else  @endif border-bottom-0">
                         <div class="font-weight-bold">#{{ $loop->index+1}} {{@$comment->user->fullName}}</div>
-                        <div>{{ $comment->created_at->diffForHumans() }} <small class="text-gray-500">({{ $comment->created_at->format('d/m/Y H:i:s') }})</small></div>
+                        <div>
+{{--                            {{ $comment->created_at->diffForHumans() }}--}}
+                            <small class="text-gray-500">({{ $comment->created_at->format('d/m/Y H:i:s') }})</small></div>
                     </div>
                     <div class="card-body pb-0">
                         <p>{!!$comment->content  !!}</p>

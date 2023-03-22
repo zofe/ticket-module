@@ -1,11 +1,11 @@
 <?php
 
-namespace Uania\Ticket\Services;
+namespace Zofe\Ticket\Services;
 
 
 use App\Models\User;
-use App\Modules\Tickets\Models\Ticket;
-use App\Modules\Tickets\Models\TicketComment;
+use App\Modules\Ticket\Models\Ticket;
+use App\Modules\Ticket\Models\TicketComment;
 use Carbon\Carbon;
 
 class TicketService
@@ -25,7 +25,7 @@ class TicketService
     {
         $ticket = new Ticket();
         $ticket->user_id = $user->id;
-        $ticket->company_id = $user->company_id;
+        //$ticket->company_id = $user->company_id;
         $ticket->ticket_category_id = $category_id;
         $ticket->subject = $subject;
         $ticket->content = $content;
@@ -42,7 +42,7 @@ class TicketService
         $comment = new TicketComment();
         $comment->ticket_id = $ticket->id;
         $comment->user_id = $user->id;
-        $comment->company_id = $user->company_id;
+        //$comment->company_id = $user->company_id;
         $comment->content = $content;
         $comment->screenshot1 = $screenshot1;
         $comment->screenshot2 = $screenshot2;

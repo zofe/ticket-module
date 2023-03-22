@@ -67,7 +67,7 @@ class TicketsView extends Component
 
         $this->categories = TicketCategory::all()->pluck('name','id')->toArray();
         $this->closingCategories = TicketClosingCategory::all()->pluck('name','id')->toArray();
-        $this->agents = User::role(['admin','commercial','technician'])->get()->pluck('fullName','id')->toArray();
+        $this->agents = User::role(config('ticket.operators_roles'))->get()->pluck('fullName','id')->toArray();
         $this->agent_id = $ticket->agent_id;
         $this->ticket_category_id = $ticket->ticket_category_id;
 
