@@ -45,21 +45,6 @@ class TicketComment extends Model
 
     protected $table = 'ticket_comments';
 
-    /**
-     * @codeCoverageIgnore
-     */
-    public function toSearchableArray()
-    {
-        $fields = $this->toArray();
-
-        $allowed  = ['id','subject', 'created_at','updated_at'];
-        $filtered = array_filter(
-            $fields,
-            fn ($key) => in_array($key, $allowed),
-            ARRAY_FILTER_USE_KEY
-        );
-        return $filtered;
-    }
 
     public static function ssearchFallback($search)
     {

@@ -17,7 +17,7 @@
             <div class="col-md-6 flex-fill">
                 @if(!app()->environment('testing'))
                     <x-rpd::card bg="transparent" border="secondary">
-                        <livewire:tickets::charts-tickets-month />
+                        <livewire:ticket::charts-tickets-month />
                     </x-rpd::card>
                 @endif
             </div>
@@ -25,7 +25,7 @@
 
 
         <x-rpd::table
-            title="tickets::ticket.tickets"
+            title="ticket::ticket.tickets"
             :items="$items"
         >
 
@@ -44,7 +44,7 @@
             <x-slot name="buttons">
                 <a href="{{ route('tickets.tickets.table') }}" class="btn btn-dark">{{ __('global.reset') }}</a>
 
-{{--                <a href="{{ route('tickets.tickets.edit') }}" class="btn btn-primary">{{ __('tickets::ticket.ticket_add') }}</a>--}}
+{{--                <a href="{{ route('tickets.tickets.edit') }}" class="btn btn-primary">{{ __('ticket::ticket.ticket_add') }}</a>--}}
             </x-slot>
 
 
@@ -56,10 +56,10 @@
                         ID
                     </th>
                     <th>
-                        @lang('tickets::ticket.category')
+                        @lang('ticket::ticket.category')
                     </th>
                     <th>
-                        @lang('tickets::ticket.subject')
+                        @lang('ticket::ticket.subject')
                     </th>
                     <th>
 
@@ -67,13 +67,13 @@
 
                     </th>
                     <th>
-                        @lang('tickets::ticket.status')
+                        @lang('ticket::ticket.status')
                     </th>
                     <th>
                         BOX
                     </th>
                     <th>
-                        @lang('tickets::ticket.agent')
+                        @lang('ticket::ticket.agent')
                     </th>
                     <th>
                         @lang('global.company')
@@ -114,7 +114,7 @@
                             {!! $ticket->lastMessage !!}
                         </td>
                         <td class="">
-                            <div class="text-uppercase">{{ __('tickets::ticket.'.$ticket->status) }}</div>
+                            <div class="text-uppercase">{{ __('ticket::ticket.'.$ticket->status) }}</div>
                             <div class="small">{{ optional($ticket->closing)->name }}</div>
                         </td>
                         <td>

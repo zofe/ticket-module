@@ -37,12 +37,12 @@ class TicketsTable extends Component
         $this->ticket_sum = Ticket::count();
 
         $this->ticket_statuses = [
-            ''              => __('tickets::ticket.any'),
-            'open'          => __('tickets::ticket.open_or_awaiting'),
-            'not_assigned'  => __('tickets::ticket.not_assigned'),
-            'assigned'      => __('tickets::ticket.assigned'),
-            'awaiting'      => __('tickets::ticket.awaiting'),
-            'closed'        => __('tickets::ticket.closed'),
+            ''              => __('ticket::ticket.any'),
+            'open'          => __('ticket::ticket.open_or_awaiting'),
+            'not_assigned'  => __('ticket::ticket.not_assigned'),
+            'assigned'      => __('ticket::ticket.assigned'),
+            'awaiting'      => __('ticket::ticket.awaiting'),
+            'closed'        => __('ticket::ticket.closed'),
         ];
     }
 
@@ -75,6 +75,6 @@ class TicketsTable extends Component
     {
         $items = $this->getDataSet();
 
-        return view('tickets::Tickets.views.tickets_table', compact('items'));
+        return view('ticket::Tickets.views.tickets_table', compact('items'));
     }
 }

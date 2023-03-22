@@ -202,6 +202,6 @@ class TicketsView extends Component
 
     public function render()
     {
-        return view('tickets::Tickets.views.tickets_view');
+        return view('ticket::Tickets.views.tickets_view');
     }
 }

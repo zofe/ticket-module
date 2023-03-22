@@ -15,8 +15,7 @@ use Illuminate\Support\Facades\App;
 
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Str;
-use Laravel\Scout\Searchable;
-use MeiliSearch\Endpoints\Indexes;
+
 use Mews\Purifier\Facades\Purifier;
 use ZeroDaHero\LaravelWorkflow\Traits\WorkflowTrait;
 
@@ -68,7 +67,7 @@ class Ticket extends Model
     use HasUuids;
     use ShortId;
     use WorkflowTrait;
-    use Searchable, SSearch;
+    use SSearch;
 
 
     protected $table = 'tickets';
@@ -76,34 +75,6 @@ class Ticket extends Model
 
 //    protected $keyType = 'string';
 //    public $incrementing = false;
-
-
-    /**
-     * @codeCoverageIgnore
-     */
-    public function toSearchableArray()
-    {
-        $fields = $this->toArray();
-
-        $allowed  = [
-            'id',
-            'subject',
-            'created_at',
-            'updated_at',
-            'company_id',
-        ];
-        $filtered = array_filter(
-            $fields,
-            fn ($key) => in_array($key, $allowed),
-            ARRAY_FILTER_USE_KEY
-        );
-
-        $filtered['business_name'] = ($this->user && $this->user->company) ? $this->user->company->business_name: '';
-        $filtered['firstname'] = optional($this->user)->firstname;
-        $filtered['lastname'] = optional($this->user)->lastname;
-
-        return $filtered;
-    }
 
 
     public static function ssearchFallback($search)

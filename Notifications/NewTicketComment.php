@@ -58,7 +58,7 @@ class NewTicketComment extends Notification implements ShouldQueue
 
         return (new MailMessage)
             ->subject('Replica al Ticket #'.$this->comment->ticket->shortId)
-            ->markdown('tickets::emails.new-ticket-comment', ['comment' => $this->comment,'user' => $this->comment->user]);
+            ->markdown('ticket::emails.new-ticket-comment', ['comment' => $this->comment,'user' => $this->comment->user]);
     }
 
     /**

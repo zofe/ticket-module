@@ -56,7 +56,7 @@ class TicketsPendingToAgent extends Notification implements ShouldQueue
 
             return (new MailMessage)
                 ->subject('Report Ticket da chiudere')
-                ->markdown('tickets::emails.tickets_pending_to_agent', [
+                ->markdown('ticket::emails.tickets_pending_to_agent', [
                     'user'              => $agent,
                     'tickets_expired'   => $tickets_expired,
                     'tickets_awaiting'  => $tickets_awaiting

@@ -48,7 +48,7 @@ class TicketsMonth extends Component
                 ->withGrid()
             );
 
-        return view('tickets::Charts.views.tickets_month')
+        return view('ticket::Charts.views.tickets_month')
             ->with([
                 'tickets' => $chart,
             ]);

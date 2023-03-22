@@ -54,7 +54,7 @@ class NewTicket extends Notification implements ShouldQueue
     {
         return (new MailMessage)
             ->subject('Nuovo Ticket #'.$this->ticket->shortId)
-            ->markdown('tickets::emails.new-ticket', ['ticket' => $this->ticket,'user' => $this->ticket->user]);
+            ->markdown('ticket::emails.new-ticket', ['ticket' => $this->ticket,'user' => $this->ticket->user]);
     }
 
     /**

@@ -1,5 +1,5 @@
 
-    <x-rpd::view title="tickets::ticket.ticket_view">
+    <x-rpd::view title="ticket::ticket.ticket_view">
 
         <x-slot name="buttons">
 
@@ -33,10 +33,10 @@
                     @section('transtion_status')
                         @if($transitions)
 
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">{{ __('tickets::ticket.'.$ticket->status)  }}</button>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">{{ __('ticket::ticket.'.$ticket->status)  }}</button>
                             <ul class="dropdown-menu">
                                 @foreach($transitions as $transition)
-                                    <li><a wire:key="tr{{ $loop->index }}" class="dropdown-item" wire:click.prevent="newStatus('{{ $transition }}')" href="#">{{ __('tickets::ticket.'.$transition)}}</a></li>
+                                    <li><a wire:key="tr{{ $loop->index }}" class="dropdown-item" wire:click.prevent="newStatus('{{ $transition }}')" href="#">{{ __('ticket::ticket.'.$transition)}}</a></li>
                                 @endforeach
                             </ul>
                         @endif
@@ -62,12 +62,12 @@
                     </div>
                     <div class="col-md-6">
                         <p class="mb-1">
-                            <strong>{{ __('tickets::ticket.category') }}</strong>: {{ @$ticket->category->name?:'-' }}
+                            <strong>{{ __('ticket::ticket.category') }}</strong>: {{ @$ticket->category->name?:'-' }}
 
                             <x-rpd::icon name="edit" target="category" />
                         </p>
                         <p class="mb-1">
-                            <strong>{{ __('tickets::ticket.assigned_to') }}</strong>: {{ @$ticket->agent->fullName?:'-' }}
+                            <strong>{{ __('ticket::ticket.assigned_to') }}</strong>: {{ @$ticket->agent->fullName?:'-' }}
                             @if($ticket->status === 'assigned')
 
                                 <x-rpd::icon name="edit" target="assign" />
@@ -78,9 +78,9 @@
 
 
                         <div class="border p-2 bg-uania">
-                            <div class="small float-end">{{ __('tickets::ticket.closing_fields') }}</div>
+                            <div class="small float-end">{{ __('ticket::ticket.closing_fields') }}</div>
                             <div class="">
-                                <strong class="text-dark">{{ __('tickets::ticket.problem_found') }}</strong>
+                                <strong class="text-dark">{{ __('ticket::ticket.problem_found') }}</strong>
                                 @if(in_array($ticket->status, ['assigned','closed','awaiting']))
 
                                     <x-rpd::icon name="edit" target="closingCategory" />
@@ -98,7 +98,7 @@
                             </div>
 
                             <div class="mt-2 border-top">
-                                <strong class="text-dark">{{ __('tickets::ticket.closing_criticality') }}?</strong>
+                                <strong class="text-dark">{{ __('ticket::ticket.closing_criticality') }}?</strong>
                                 <div class="mt-1">
                                     {{ bool_to_str($ticket->closing_criticality)  }}
                                 </div>
@@ -107,30 +107,30 @@
                             {{-- modale campi operatore --}}
                             <x-rpd::modal
                                 name="closingCategory"
-                                title="tickets::ticket.problem_found"
+                                title="ticket::ticket.problem_found"
                                 action="closingCategory()"
                             >
                                 <x-rpd::select col="col-md-12" model="closing_category" label="global.category" :options="$categories" />
-                                <x-rpd::textarea model="closing_note" label="tickets::ticket.closing_note" />
-                                <x-rpd::select col="col-md-12" model="closing_criticality" label="tickets::ticket.closing_criticality" :options="$closingCategories" />
+                                <x-rpd::textarea model="closing_note" label="ticket::ticket.closing_note" />
+                                <x-rpd::select col="col-md-12" model="closing_criticality" label="ticket::ticket.closing_criticality" :options="$closingCategories" />
                             </x-rpd::modal>
 
                             {{-- modale assegnazione --}}
                             <x-rpd::modal
                                 name="assign"
-                                title="tickets::ticket.assign_to"
+                                title="ticket::ticket.assign_to"
                                 action="assign()"
                             >
-                                <x-rpd::select col="col-md-12" model="agent_id" label="tickets::ticket.agent" :options="$agents" />
+                                <x-rpd::select col="col-md-12" model="agent_id" label="ticket::ticket.agent" :options="$agents" />
                             </x-rpd::modal>
 
                             {{-- modale categoria --}}
                             <x-rpd::modal
                                 name="category"
-                                title="tickets::ticket.change_category"
+                                title="ticket::ticket.change_category"
                                 action="changeCategory()"
                             >
-                                <x-rpd::select col="col-md-12" model="ticket_category_id" label="tickets::ticket.change_category" :options="$categories" />
+                                <x-rpd::select col="col-md-12" model="ticket_category_id" label="ticket::ticket.change_category" :options="$categories" />
                             </x-rpd::modal>
 
 
@@ -190,7 +190,7 @@
             @if($ticket->status === 'assigned' || $ticket->status === 'awaiting' || $ticket->status === 'open')
 
                 <x-rpd::button
-                    label="tickets::ticket.reply"
+                    label="ticket::ticket.reply"
                     color="primary"
                     target="comment"
                 />
@@ -198,7 +198,7 @@
             @elseif($ticket->status === 'closed')
 
                 <x-rpd::button
-                    label="tickets::ticket.reopen"
+                    label="ticket::ticket.reopen"
                     color="primary"
                     target="comment"
                 />
@@ -210,7 +210,7 @@
 
             <x-rpd::modal
                 name="comment"
-                title="tickets::ticket.ticket_add"
+                title="ticket::ticket.ticket_add"
                 action="comment()"
             >
 

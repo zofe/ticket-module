@@ -5,7 +5,6 @@ namespace App\Modules\Ticket\Models;
 use Zofe\Rapyd\Traits\SSearch;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Laravel\Scout\Searchable;
 
 
 class TicketAnswer extends Model
@@ -20,22 +19,6 @@ class TicketAnswer extends Model
         return $this->title ." - ". Str::limit($this->answer, 50);
     }
 
-    /**
-     * @codeCoverageIgnore
-     */
-    public function toSearchableArray()
-    {
-        $fields = $this->toArray();
-
-        $allowed  = ['id','title','created_at'];
-        $filtered = array_filter(
-            $fields,
-            fn ($key) => in_array($key, $allowed),
-            ARRAY_FILTER_USE_KEY
-        );
-
-        return $filtered;
-    }
 
     public static function ssearchFallback($query)
     {

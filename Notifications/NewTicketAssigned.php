@@ -58,7 +58,7 @@ class NewTicketAssigned extends Notification implements ShouldQueue
     {
         return (new MailMessage)
             ->subject('Ticket Assegnato a '.$this->agent->fullName.' #'.$this->ticket->shortId)
-            ->markdown('tickets::emails.ticket-assigned', ['ticket' => $this->ticket,'user' => $this->ticket->user, 'agent'=>$this->agent]);
+            ->markdown('ticket::emails.ticket-assigned', ['ticket' => $this->ticket,'user' => $this->ticket->user, 'agent'=>$this->agent]);
     }
 
     /**

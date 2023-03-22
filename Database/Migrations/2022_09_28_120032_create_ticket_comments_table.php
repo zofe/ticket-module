@@ -20,7 +20,7 @@ class CreateTicketCommentsTable extends Migration
             $table->longText('content');
             $table->longText('html')->nullable();
             $table->uuid('user_id');
-            $table->uuid('company_id');
+            //$table->uuid('company_id');
             $table->string('screenshot1')->nullable();
             $table->string('screenshot2')->nullable();
             $table->string('screenshot3')->nullable();
@@ -29,7 +29,7 @@ class CreateTicketCommentsTable extends Migration
         });
 
         Schema::table('ticket_comments', function (Blueprint $table) {
-            $table->foreign('company_id')->references('id')->on('companies')->onDelete('CASCADE');
+            //$table->foreign('company_id')->references('id')->on('companies')->onDelete('CASCADE');
             $table->foreign('ticket_id')->references('id')->on('tickets')->onDelete('CASCADE');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
         });

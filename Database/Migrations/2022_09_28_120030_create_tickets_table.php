@@ -26,7 +26,7 @@ class CreateTicketsTable extends Migration
             $table->uuid('model_id')->nullable();
 
             $table->uuid('user_id');
-            $table->uuid('company_id');
+            //$table->uuid('company_id');
             $table->uuid('agent_id')->nullable();
 
             $table->unsignedBigInteger('closing_category')->nullable();
@@ -52,7 +52,7 @@ class CreateTicketsTable extends Migration
 
         Schema::table('tickets', function (Blueprint $table) {
             $table->foreign('agent_id')->references('id')->on('users')->onDelete('CASCADE');
-            $table->foreign('company_id')->references('id')->on('companies')->onDelete('CASCADE');
+           // $table->foreign('company_id')->references('id')->on('companies')->onDelete('CASCADE');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
         });
     }

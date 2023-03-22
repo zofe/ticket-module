@@ -37,14 +37,14 @@ class IspTicketsTest extends TestCase
             ->withoutExceptionHandling()
             ->get(route_lang('tickets.tickets.table'))
             ->assertSuccessful()
-            ->assertSeeLivewire('tickets::tickets-isp-tickets-table')
+            ->assertSeeLivewire('ticket::tickets-isp-tickets-table')
         ;
     }
 
     public function test_isp_can_open_tickets()
     {
          Livewire::actingAs($this->isp)
-            ->test('tickets::tickets-isp-tickets-table')
+            ->test('ticket::tickets-isp-tickets-table')
             ->set('subject','Oggetto ticket')
             ->set('content','Contenuto ticket')
             ->set('ticket_category_id',1)//technical
@@ -57,12 +57,12 @@ class IspTicketsTest extends TestCase
 
 
         Livewire::actingAs($this->isp)
-            ->test('tickets::tickets-isp-tickets-table')
+            ->test('ticket::tickets-isp-tickets-table')
             ->assertSee('Oggetto ticket')
         ;
 
         Livewire::actingAs($this->isp)
-            ->test('tickets::tickets-isp-tickets-view',['ticket'=> $ticket])
+            ->test('ticket::tickets-isp-tickets-view',['ticket'=> $ticket])
             ->assertSee('Oggetto ticket')
         ;
 
