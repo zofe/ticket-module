@@ -2,8 +2,8 @@
 
 
 
-use App\Modules\Tickets\Components\Tickets\TicketsTable;
-use App\Modules\Tickets\Components\Tickets\TicketsView;
+use App\Modules\Ticket\Components\Tickets\TicketsTable;
+use App\Modules\Ticket\Components\Tickets\TicketsView;
 use Illuminate\Support\Facades\Route;
 
 
