@@ -6,7 +6,7 @@ namespace App\Modules\Tickets\Components\Tickets;
 
 use App\Modules\Tickets\Models\Ticket;
 use App\Modules\Tickets\Models\TicketCategory;
-use App\Traits\Authorize;
+use Zofe\Auth\Traits\Authorize;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Zofe\Rapyd\Traits\WithDataTable;

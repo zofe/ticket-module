@@ -5,10 +5,11 @@ namespace App\Modules\Tickets\Models;
 use App\Models\User;
 use App\Modules\Tickets\Notifications\NewTicket;
 use App\Modules\Tickets\Notifications\NewTicketAssigned;
-use App\Traits\ShortId;
-use App\Traits\SSearch;
+use Zofe\Rapyd\Traits\ShortId;
+use Zofe\Rapyd\Traits\SSearch;
 use Carbon\Carbon;
-use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Uuid;
+
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
 
@@ -64,7 +65,7 @@ use ZeroDaHero\LaravelWorkflow\Traits\WorkflowTrait;
  */
 class Ticket extends Model
 {
-    use Uuid;
+    use HasUuids;
     use ShortId;
     use WorkflowTrait;
     use Searchable, SSearch;
@@ -73,8 +74,8 @@ class Ticket extends Model
     protected $table = 'tickets';
     protected $dates = ['completed_at', 'sla_expiring', 'sla_charge_expiring', 'last_commented_at', 'last_opened_at', 'last_closed_at'];
 
-    protected $keyType = 'string';
-    public $incrementing = false;
+//    protected $keyType = 'string';
+//    public $incrementing = false;
 
 
     /**

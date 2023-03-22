@@ -10,16 +10,21 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0|^8.1|^8.2",
-        "illuminate/config": "^8.82|^9.0|^10.0",
-        "illuminate/contracts": "^8.82|^9.0|^10.0",
+        "php": "^8.0|^8.1|^8.2",
+        "illuminate/config": "^9.0|^10.0",
+        "illuminate/contracts": "^9.0|^10.0",
         "livewire/livewire": "^2.0",
+        "asantibanez/livewire-charts": "^2.4",
+        "laravel-notification-channels/telegram": "^2.1",
+        "mews/purifier": "^3.3",
+        "zerodahero/laravel-workflow": "^4.0",
         "zofe/rapyd-livewire": "dev-main|^0.8",
         "zofe/rapyd-module-installer": "^0.0|^0.1",
-        "zofe/layout-module": "dev-main|^0.0|^0.1"
+        "zofe/layout-module": "dev-main|^0.0|^0.1",
+        "zofe/auth-module": "dev-main|^0.0|^0.1"
     },
     "require-dev": {
-        "orchestra/testbench": "^v6.0|^v7.0|^v8.0",
+        "orchestra/testbench": "^v7.0|^v8.0",
         "phpunit/phpunit": "^9.3|^10.0.7",
         "vimeo/psalm": "^4.0|^5.0"
     },

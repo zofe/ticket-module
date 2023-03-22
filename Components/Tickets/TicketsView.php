@@ -10,8 +10,7 @@ use App\Modules\Tickets\Models\Ticket;
 use App\Modules\Tickets\Models\TicketAnswer;
 use App\Modules\Tickets\Models\TicketCategory;
 use App\Modules\Tickets\Models\TicketClosingCategory;
-use App\Traits\AddRule;
-use App\Traits\Authorize;
+use Zofe\Auth\Traits\Authorize;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -19,7 +18,6 @@ use Livewire\WithFileUploads;
 class TicketsView extends Component
 {
     use Authorize;
-    use AddRule;
     use WithFileUploads;
 
     public $ticket;
@@ -56,6 +54,11 @@ class TicketsView extends Component
     public function booted()
     {
         $this->authorize('admin|view tickets');
+    }
+
+    public function addRule($field, $rule)
+    {
+        $this->rules[$field] = $rule;
     }
 
     public function mount(Ticket $ticket)
