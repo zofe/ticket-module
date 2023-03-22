@@ -3,7 +3,7 @@
 namespace App\Modules\Ticket\Components\Charts;
 
 
-use App\Modules\Tickets\Models\Ticket;
+use App\Modules\Ticket\Models\Ticket;
 use Asantibanez\LivewireCharts\Facades\LivewireCharts;
 
 use Carbon\Carbon;

@@ -3,8 +3,8 @@
 
 namespace App\Modules\Ticket\Database\Seeders;
 
-use App\Modules\Tickets\Models\TicketCategory;
-use App\Modules\Tickets\Models\TicketClosingCategory;
+use App\Modules\Ticket\Models\TicketCategory;
+use App\Modules\Ticket\Models\TicketClosingCategory;
 use Illuminate\Database\Seeder;
 
 class TicketCategories extends Seeder

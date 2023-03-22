@@ -4,8 +4,8 @@ namespace App\Modules\Ticket\Components\Tickets;
 
 
 
-use App\Modules\Tickets\Models\Ticket;
-use App\Modules\Tickets\Models\TicketCategory;
+use App\Modules\Ticket\Models\Ticket;
+use App\Modules\Ticket\Models\TicketCategory;
 use Zofe\Auth\Traits\Authorize;
 use Livewire\Component;
 use Livewire\WithFileUploads;

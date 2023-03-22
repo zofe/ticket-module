@@ -5,8 +5,8 @@ namespace App\Modules\Ticket\Observers;
 
 
 use App\Models\User;
-use App\Modules\Tickets\Models\TicketComment;
-use App\Modules\Tickets\Notifications\NewTicketComment;
+use App\Modules\Ticket\Models\TicketComment;
+use App\Modules\Ticket\Notifications\NewTicketComment;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Notification;
 

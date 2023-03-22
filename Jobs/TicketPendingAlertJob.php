@@ -5,7 +5,7 @@ namespace App\Modules\Ticket\Jobs;
 
 use App\Models\User;
 
-use App\Modules\Tickets\Notifications\TicketsPendingToAgent;
+use App\Modules\Ticket\Notifications\TicketsPendingToAgent;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;

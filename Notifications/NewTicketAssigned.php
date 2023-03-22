@@ -2,7 +2,7 @@
 
 namespace App\Modules\Ticket\Notifications;
 
-use App\Modules\Tickets\Models\Ticket;
+use App\Modules\Ticket\Models\Ticket;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

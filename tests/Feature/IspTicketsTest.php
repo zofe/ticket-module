@@ -6,8 +6,8 @@ use App\Models\Company;
 use App\Models\User;
 
 
-use App\Modules\Tickets\Models\Ticket;
-use App\Modules\Tickets\tests\TestCase;
+use App\Modules\Ticket\Models\Ticket;
+use App\Modules\Ticket\tests\TestCase;
 use Livewire\Livewire;
 
 /**

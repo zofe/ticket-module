@@ -4,8 +4,8 @@ namespace App\Modules\Ticket\Console\Commands;
 
 
 
-use App\Modules\Tickets\Jobs\TicketPendingAlertJob;
-use App\Modules\Tickets\Models\Ticket;
+use App\Modules\Ticket\Jobs\TicketPendingAlertJob;
+use App\Modules\Ticket\Models\Ticket;
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 

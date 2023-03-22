@@ -3,7 +3,7 @@
 namespace App\Modules\Ticket\Providers;
 
 
-use App\Modules\Tickets\Console\Commands\TicketPendingAlert;
+use App\Modules\Ticket\Console\Commands\TicketPendingAlert;
 use Illuminate\Support\ServiceProvider;
 
 

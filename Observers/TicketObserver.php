@@ -4,9 +4,9 @@ namespace App\Modules\Ticket\Observers;
 
 
 use App\Models\User;
-use App\Modules\Tickets\Models\Ticket;
-use App\Modules\Tickets\Notifications\NewTicket;
-use App\Modules\Tickets\Notifications\NewTicketAssigned;
+use App\Modules\Ticket\Models\Ticket;
+use App\Modules\Ticket\Notifications\NewTicket;
+use App\Modules\Ticket\Notifications\NewTicketAssigned;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Notification;
 

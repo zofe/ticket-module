@@ -3,7 +3,7 @@
 namespace App\Modules\Ticket\Models;
 
 use App\Models\User;
-use App\Modules\Tickets\Notifications\NewTicketComment;
+use App\Modules\Ticket\Notifications\NewTicketComment;
 use Zofe\Rapyd\Traits\SSearch;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;

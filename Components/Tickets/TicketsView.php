@@ -5,11 +5,11 @@ namespace App\Modules\Ticket\Components\Tickets;
 
 
 use App\Models\User;
-use App\Modules\Tickets\Services\TicketService;
-use App\Modules\Tickets\Models\Ticket;
-use App\Modules\Tickets\Models\TicketAnswer;
-use App\Modules\Tickets\Models\TicketCategory;
-use App\Modules\Tickets\Models\TicketClosingCategory;
+use App\Modules\Ticket\Services\TicketService;
+use App\Modules\Ticket\Models\Ticket;
+use App\Modules\Ticket\Models\TicketAnswer;
+use App\Modules\Ticket\Models\TicketCategory;
+use App\Modules\Ticket\Models\TicketClosingCategory;
 use Zofe\Auth\Traits\Authorize;
 use Livewire\Component;
 use Livewire\WithFileUploads;

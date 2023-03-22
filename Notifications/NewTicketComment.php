@@ -3,7 +3,7 @@
 namespace App\Modules\Ticket\Notifications;
 
 use App\Models\User;
-use App\Modules\Tickets\Models\TicketComment;
+use App\Modules\Ticket\Models\TicketComment;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
