@@ -14,6 +14,7 @@
         "illuminate/config": "^9.0|^10.0",
         "illuminate/contracts": "^9.0|^10.0",
         "livewire/livewire": "^2.0",
+        "cmixin/business-time": "^1.11",
         "asantibanez/livewire-charts": "^2.4",
         "laravel-notification-channels/telegram": "^2.1|^3.0|^4.0",
         "mews/purifier": "^3.3",
