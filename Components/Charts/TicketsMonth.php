@@ -21,7 +21,7 @@ class TicketsMonth extends Component
             DATE_FORMAT(created_at, '%m-%Y') ticket_date,
             YEAR(created_at) year, MONTH(created_at) month"))
             ->where('created_at','>=', Carbon::now()->startOfMonth()->subMonths(12))
-            ->groupby('year','month')
+            ->groupBy('year','month')
             ->orderBy('year')
             ->orderBy('month')
             ->get();

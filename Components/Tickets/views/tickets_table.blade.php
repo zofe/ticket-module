@@ -3,7 +3,7 @@
 
         <div class="row gy-4">
             <div class="col-md-6 d-flex align-items-stretch">
-                <x-rpd::card title="stats" bg="transparent" border="secondary">
+                <x-rpd::card title="stats" >
                     <dl class="row px-2">
                         <dt class="col-9">Aperti</dt><dd class="col-3 text-nowrap text-right">{{ stats_ticket_open() }}</dd>
                         <dt class="col-9">Non Assegnati</dt><dd class="col-3 text-nowrap text-right">{{ stats_ticket_not_assigned() }}</dd>
@@ -15,15 +15,15 @@
             </div>
 
             <div class="col-md-6 flex-fill">
-                @if(!app()->environment('testing'))
-                    <x-rpd::card bg="transparent" border="secondary">
-                        <livewire:ticket::charts-tickets-month />
-                    </x-rpd::card>
-                @endif
+{{--                @if(!app()->environment('testing'))--}}
+{{--                    <x-rpd::card bg="transparent" border="secondary">--}}
+{{--                        <livewire:ticket::charts-tickets-month />--}}
+{{--                    </x-rpd::card>--}}
+{{--                @endif--}}
             </div>
         </div>
 
-
+    <x-rpd::card>
         <x-rpd::table
             title="ticket::ticket.tickets"
             :items="$items"
@@ -32,7 +32,7 @@
             <x-slot name="filters">
 
                     <div class="col-md-9 row">
-                        <x-rpd::input col="col-md-5" debounce="350" model="search"  placeholder="{{ __('global.search') }}..." />
+                        <x-rpd::input col="col-md-5" debounce="350" model="search"  placeholder="{{ __('search') }}..." />
 
                         <x-rpd::radiogroup col="col" chunk="3" wire:model="status" :options="$ticket_statuses" />
 
@@ -42,7 +42,7 @@
 
 
             <x-slot name="buttons">
-                <a href="{{ route('tickets.tickets.table') }}" class="btn btn-dark">{{ __('global.reset') }}</a>
+                <a href="{{ route('tickets.tickets.table') }}" class="btn btn-dark">{{ __('reset') }}</a>
 
 {{--                <a href="{{ route('tickets.tickets.edit') }}" class="btn btn-primary">{{ __('ticket::ticket.ticket_add') }}</a>--}}
             </x-slot>
@@ -62,36 +62,33 @@
                         @lang('ticket::ticket.subject')
                     </th>
                     <th>
+                        @lang('last_message')
 
-                        ultimo messaggio
 
                     </th>
                     <th>
                         @lang('ticket::ticket.status')
                     </th>
                     <th>
-                        BOX
-                    </th>
-                    <th>
                         @lang('ticket::ticket.agent')
                     </th>
-                    <th>
-                        @lang('global.company')
-                    </th>
+{{--                    <th>--}}
+{{--                        @lang('global.company')--}}
+{{--                    </th>--}}
                     <th>
 
-                        @lang('global.created_at')
+                        @lang('created_at')
 
                     </th>
                     <th>
 {{--                        <a wire:click.prevent="sortBy('sla_charge_expiring')" role="button" href="#" class="capitalize text-uppercase">--}}
-                            SLA <small>in carico</small>
+                            SLA <small>charge</small>
 {{--                        <i class="{{ $this->getSortIcon('sla_charge_expiring') }}"></i>--}}
 {{--                        </a>--}}
                     </th>
                     <th>
 {{--                        <a wire:click.prevent="sortBy('sla_expiring')" role="button" href="#" class="capitalize text-uppercase">--}}
-                            SLA <small>chiusura</small>
+                            SLA <small>closing</small>
 {{--                        <i class="{{ $this->getSortIcon('sla_expiring') }}"></i>--}}
 {{--                        </a>--}}
                     </th>
@@ -117,13 +114,11 @@
                             <div class="text-uppercase">{{ __('ticket::ticket.'.$ticket->status) }}</div>
                             <div class="small">{{ optional($ticket->closing)->name }}</div>
                         </td>
-                        <td>
-                            -
-                        </td>
+
                         <td>{{ @$ticket->agent->fullName }}</td>
-                        <td>
-                            {!!  @$ticket->user->company->admin_link  !!}
-                        </td>
+{{--                        <td>--}}
+{{--                            {!!  @$ticket->user->company->admin_link  !!}--}}
+{{--                        </td>--}}
                         {{--                <td>{{ $ticket->updated_at->diffForHumans() }}</td>--}}
                         <td>{{ $ticket->created_at->diffForHumans() }}</td>
 
@@ -138,6 +133,6 @@
 
 
         </x-rpd::table>
-
+    </x-rpd::card>
 </div>
 
