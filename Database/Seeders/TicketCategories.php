@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Modules\Tickets\Database\Seeders;
+namespace App\Modules\Ticket\Database\Seeders;
 
 use App\Modules\Tickets\Models\TicketCategory;
 use App\Modules\Tickets\Models\TicketClosingCategory;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Tickets\Services;
+namespace App\Modules\Ticket\Services;
 
 
 

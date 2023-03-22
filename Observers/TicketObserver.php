@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Tickets\Observers;
+namespace App\Modules\Ticket\Observers;
 
 
 use App\Models\User;

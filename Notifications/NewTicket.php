@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Tickets\Notifications;
+namespace App\Modules\Ticket\Notifications;
 
 use App\Modules\Tickets\Models\Ticket;
 use Illuminate\Bus\Queueable;

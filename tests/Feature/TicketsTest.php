@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Tickets\tests\Feature;
+namespace App\Modules\Ticket\tests\Feature;
 
 use App\Models\Company;
 use App\Models\User;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Tickets\Models;
+namespace App\Modules\Ticket\Models;
 
 use Zofe\Rapyd\Traits\SSearch;
 use Illuminate\Database\Eloquent\Model;

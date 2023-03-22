@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Tickets\Models;
+namespace App\Modules\Ticket\Models;
 
 use App\Models\User;
 use App\Modules\Tickets\Notifications\NewTicketComment;

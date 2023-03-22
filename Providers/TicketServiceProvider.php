@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Tickets\Providers;
+namespace App\Modules\Ticket\Providers;
 
 
 use App\Modules\Tickets\Console\Commands\TicketPendingAlert;

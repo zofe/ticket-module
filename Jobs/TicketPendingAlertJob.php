@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Tickets\Jobs;
+namespace App\Modules\Ticket\Jobs;
 
 
 use App\Models\User;

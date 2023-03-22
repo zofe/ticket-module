@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Tickets\Components\Charts;
+namespace App\Modules\Ticket\Components\Charts;
 
 
 use App\Modules\Tickets\Models\Ticket;

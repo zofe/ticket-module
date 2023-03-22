@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Tickets\Console\Commands;
+namespace App\Modules\Ticket\Console\Commands;
 
 
 
