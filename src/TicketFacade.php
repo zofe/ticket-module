@@ -1,6 +1,6 @@
 <?php
 
-namespace Uania\Ticket;
+namespace Zofe\Ticket;
 
 use Illuminate\Support\Facades\Facade;
 

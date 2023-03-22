@@ -30,8 +30,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Zofe\\Auth\\": "src",
-            "Zofe\\Auth\\Database\\Factories\\": "database/factories"
+            "Zofe\\Ticket\\": "src",
+            "Zofe\\Ticket\\Database\\Factories\\": "database/factories"
         },
         "files": [
             "src/helpers.php"
@@ -39,7 +39,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Zofe\\Auth\\Tests\\": "tests"
+            "Zofe\\Ticket\\Tests\\": "tests"
         }
     },
     "scripts": {

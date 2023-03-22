@@ -1,6 +1,6 @@
 <?php
 
-use App\Modules\Tickets\Models\Ticket;
+use App\Modules\Ticket\Models\Ticket;
 
 if (!function_exists('workflow_transition_blockers')) {
     function workflow_transition_blockers($object, string $transition): \Symfony\Component\Workflow\TransitionBlockerList
