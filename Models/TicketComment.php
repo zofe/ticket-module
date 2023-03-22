@@ -4,11 +4,10 @@ namespace App\Modules\Tickets\Models;
 
 use App\Models\User;
 use App\Modules\Tickets\Notifications\NewTicketComment;
-use App\Traits\SSearch;
+use Zofe\Rapyd\Traits\SSearch;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Notification;
-use Laravel\Scout\Searchable;
 use Mews\Purifier\Facades\Purifier;
 
 /**
@@ -42,7 +41,7 @@ use Mews\Purifier\Facades\Purifier;
  */
 class TicketComment extends Model
 {
-    use Searchable,SSearch;
+    use SSearch;
 
     protected $table = 'ticket_comments';
 

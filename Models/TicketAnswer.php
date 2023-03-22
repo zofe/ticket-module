@@ -2,7 +2,7 @@
 
 namespace App\Modules\Tickets\Models;
 
-use App\Traits\SSearch;
+use Zofe\Rapyd\Traits\SSearch;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Laravel\Scout\Searchable;
@@ -10,7 +10,7 @@ use Laravel\Scout\Searchable;
 
 class TicketAnswer extends Model
 {
-    use Searchable, SSearch;
+    use SSearch;
 
     protected $table = 'ticket_answers';
 

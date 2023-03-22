@@ -105,41 +105,6 @@ class Ticket extends Model
         return $filtered;
     }
 
-    public static function ssearch($search, $limit=null)
-    {
-
-        //non c'è una ricerca fulltext restituisco il query builder del model
-        if(empty($search)) {
-            return static::query();
-        }
-
-
-        //sono in modalità testing, non c'è meilisearch, uso una like di fallback
-        if(App::environment(['testing']) || !config('features.use_meilisearch')) {
-
-            return static::ssearchFallback($search);
-        }
-
-        //uso meilisearch
-        $matching = static::search($search, function (Indexes $meilisearch, $query, $searchParams ){
-            $searchParams['limit'] = 200;
-            return $meilisearch->search($query, $searchParams);
-        });
-
-        if($limit) {
-            $matching = $matching->take($limit);
-        }
-        $matching = $matching->get()->pluck('id');
-
-        //restituisco mailisearch o una fallback
-        if(count($matching)) {
-            return static::query()->whereIn('id', $matching);
-        } else {
-            return static::ssearchFallback($search);
-        }
-
-    }
-
 
     public static function ssearchFallback($search)
     {
