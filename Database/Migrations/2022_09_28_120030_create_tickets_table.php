@@ -26,7 +26,13 @@ class CreateTicketsTable extends Migration
             $table->uuid('model_id')->nullable();
 
             $table->uuid('user_id');
-            //$table->uuid('company_id');
+
+            if(config('ticket.company_fk')) {
+                $table->uuid(config('ticket.company_fk'))->nullable();
+            }
+            if(config('ticket.company_subject_fk')) {
+                $table->uuid(config('ticket.company_subject_fk'))->nullable();
+            }
             $table->uuid('agent_id')->nullable();
 
             $table->unsignedBigInteger('closing_category')->nullable();
@@ -52,7 +58,15 @@ class CreateTicketsTable extends Migration
 
         Schema::table('tickets', function (Blueprint $table) {
             $table->foreign('agent_id')->references('id')->on('users')->onDelete('CASCADE');
-           // $table->foreign('company_id')->references('id')->on('companies')->onDelete('CASCADE');
+
+            if(config('ticket.company_fk')) {
+                $table->foreign(config('ticket.company_fk'))->references('id')->on(config('ticket.company_tablename'))->onDelete('CASCADE');
+            }
+
+            if(config('ticket.company_subject_fk')) {
+                $table->foreign(config('ticket.company_subject_fk'))->references('id')->on(config('ticket.company_subject_tablename'))->onDelete('CASCADE');
+            }
+
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
         });
     }

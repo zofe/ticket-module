@@ -3,6 +3,7 @@
 return [
     'tickets'       => 'Ticket',
 
+
     'ticket_list'   => 'Lista Ticket',
     'ticket_view'   => 'Dettaglio Ticket',
     'ticket_edit'   => 'Modifica Ticket',

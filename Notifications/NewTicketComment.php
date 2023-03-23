@@ -33,7 +33,7 @@ class NewTicketComment extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
-        if(!App::environment(['testing'])) {
+        if(!App::environment(['testing']) && $notifiable->routes && @$notifiable->routes['telegram']) {
             return [TelegramChannel::class];
         }
         return ['mail'];

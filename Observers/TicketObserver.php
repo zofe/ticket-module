@@ -32,7 +32,7 @@ class TicketObserver
 
     public function created(Ticket $ticket)
     {
-        $technician = User::withoutGlobalScopes()->whereEmail(config('emails.technician2'))->first();
+        $technician = User::withoutGlobalScopes()->whereEmail(config('ticket.notification_email'))->first();
 
         Notification::send([$technician,$ticket->user], new NewTicket($ticket));
         Notification::route('telegram', config('services.telegram-chat-tickets'))->notify(new NewTicket($ticket));
