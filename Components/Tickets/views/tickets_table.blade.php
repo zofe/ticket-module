@@ -70,11 +70,11 @@
                         @lang('ticket::ticket.status')
                     </th>
                     <th>
+                        @lang('user')
+                    </th>
+                    <th>
                         @lang('ticket::ticket.agent')
                     </th>
-{{--                    <th>--}}
-{{--                        @lang('global.company')--}}
-{{--                    </th>--}}
                     <th>
 
                         @lang('created_at')
@@ -115,10 +115,17 @@
                             <div class="small">{{ optional($ticket->closing)->name }}</div>
                         </td>
 
+                        <td>
+                            {{ $ticket->user->full_name }}
+                            @if(config('ticket.company_relation'))
+                                <div class="small">{!! $ticket->company_name  !!}</div>
+                            @endif
+                        </td>
+
                         <td>{{ @$ticket->agent->fullName }}</td>
-{{--                        <td>--}}
-{{--                            {!!  @$ticket->user->company->admin_link  !!}--}}
-{{--                        </td>--}}
+
+
+
                         {{--                <td>{{ $ticket->updated_at->diffForHumans() }}</td>--}}
                         <td>{{ $ticket->created_at->diffForHumans() }}</td>
 

@@ -3,7 +3,6 @@
 return [
     'tickets'       => 'Ticket',
 
-
     'ticket_list'   => 'Lista Ticket',
     'ticket_view'   => 'Dettaglio Ticket',
     'ticket_edit'   => 'Modifica Ticket',
@@ -44,11 +43,9 @@ return [
     'not_assigned'        => 'Non Assegnato',
 
 
-    //
     'problem_found'         => 'Problema Riscontrato',
     'closing_note'          => 'Note aggiuntive',
     'closing_criticality'   => 'Criticità problema',
     'change_category'       => 'Cambia Categoria',
     'closing_fields'        => 'campi operatore',
-
 ];

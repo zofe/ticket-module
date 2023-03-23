@@ -46,8 +46,8 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <p class="mb-1"><strong>{{ __('global.user') }}</strong>: {{ @$ticket->user->fullName }} !!</p>
-                        <p  class="mb-1"><strong>{{ __('global.company') }}</strong>:
+                        <p class="mb-1"><strong>{{ __('user') }}</strong>: {{ @$ticket->user->fullName }} !!</p>
+                        <p  class="mb-1"><strong>{{ __('company') }}</strong>:
                             @if($ticket->user && $ticket->user->company)
                                 {!! $ticket->user->company->admin_link !!}
                             @else
@@ -55,7 +55,7 @@
                             @endif
                         </p>
                         <p  class="mb-1">
-                            <strong>{{ __('global.status') }}</strong>:
+                            <strong>{{ __('status') }}</strong>:
                             <span>{{ $ticket->status }}</span>
                         </p>
 
@@ -73,10 +73,10 @@
                                 <x-rpd::icon name="edit" target="assign" />
                             @endif
                         </p>
-                        <p class="mb-1"> <strong>{{ __('global.created') }}</strong>:
+                        <p class="mb-1"> <strong>{{ __('created') }}</strong>:
 {{--                            {{ $ticket->created_at->diffForHumans() }} --}}
                             <small class="text-gray-500">({{ $ticket->created_at->format('d/m/Y H:i:s') }})</small></p>
-                        <p class="mb-1"> <strong>{{ __('global.last_update') }}</strong>:
+                        <p class="mb-1"> <strong>{{ __('last_update') }}</strong>:
 {{--                            {{ $ticket->last_commented_at->diffForHumans() }}--}}
                             <small class="text-gray-500">({{ $ticket->updated_at->format('d/m/Y H:i:s') }})</small></p>
 
@@ -114,7 +114,7 @@
                                 title="ticket::ticket.problem_found"
                                 action="closingCategory()"
                             >
-                                <x-rpd::select col="col-md-12" model="closing_category" label="global.category" :options="$categories" />
+                                <x-rpd::select col="col-md-12" model="closing_category" label="category" :options="$categories" />
                                 <x-rpd::textarea model="closing_note" label="ticket::ticket.closing_note" />
                                 <x-rpd::select col="col-md-12" model="closing_criticality" label="ticket::ticket.closing_criticality" :options="$closingCategories" />
                             </x-rpd::modal>

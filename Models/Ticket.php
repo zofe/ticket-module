@@ -292,9 +292,15 @@ class Ticket extends Model
         return $query->whereDate('sla_charge_expiring','<',Carbon::now()->format('Y-m-d'))->orderBy('sla_charge_expiring','asc');
     }
 
-    public function getRelationFieldAttribute()
+    public function getCompanyNameAttribute()
     {
-        return "xxx";//@$this->user->{config('ticket.user_relation')}->{config('ticket.user_relation_field')};
+//        dd(config('ticket.company_relation'),
+//            config('ticket.company_field'),
+//           $this->user,
+//           $this->user->company,
+//        );
+
+        return $this->user->{config('ticket.company_relation')}->{config('ticket.company_field')};
     }
 
 }

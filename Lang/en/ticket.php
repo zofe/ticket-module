@@ -20,13 +20,16 @@ return [
     'subject'       => 'Subject',
     'status'        => 'Status',
     'assign_to'     => 'Assign to',
+    'assigned_to'   => 'Assigned to',
     'agent'         => 'Operator',
 
     //transizioni
     'assign'            => 'Assign',
     'reassign'          => 'Reassign',
     'mark_as_complete'  => 'Mark as complete',
-    'reopen'            => 'Riapri',
+    'mark_as_awaiting'  => 'Mark as awaiting',
+    'mark_as_assigned'  => 'Mark as assigned',
+    'reopen'            => 'Reopen',
 
 
     //stati
