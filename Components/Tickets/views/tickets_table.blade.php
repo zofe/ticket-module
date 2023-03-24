@@ -15,11 +15,11 @@
             </div>
 
             <div class="col-md-6 flex-fill">
-{{--                @if(!app()->environment('testing'))--}}
-{{--                    <x-rpd::card bg="transparent" border="secondary">--}}
-{{--                        <livewire:ticket::charts-tickets-month />--}}
-{{--                    </x-rpd::card>--}}
-{{--                @endif--}}
+                @if(!app()->environment('testing'))
+                    <x-rpd::card bg="transparent" border="secondary">
+                        <livewire:ticket::charts-tickets-month />
+                    </x-rpd::card>
+                @endif
             </div>
         </div>
 
