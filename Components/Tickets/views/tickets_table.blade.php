@@ -42,7 +42,7 @@
 
 
             <x-slot name="buttons">
-                <a href="{{ route('tickets.tickets.table') }}" class="btn btn-dark">{{ __('reset') }}</a>
+                <a href="{{ route('tickets.tickets.table') }}" class="btn btn-outline-dark">{{ __('Reset') }}</a>
 
 {{--                <a href="{{ route('tickets.tickets.edit') }}" class="btn btn-primary">{{ __('ticket::ticket.ticket_add') }}</a>--}}
             </x-slot>

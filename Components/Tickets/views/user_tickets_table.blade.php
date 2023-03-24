@@ -15,7 +15,7 @@
 
 
             <x-slot name="buttons">
-                <a href="{{ route('tickets.tickets.table') }}" class="btn btn-dark">{{ __('reset') }}</a>
+                <a href="{{ route('tickets.tickets.table') }}" class="btn btn-outline-dark">{{ __('Reset') }}</a>
 
                 <x-rpd::button
                     label="ticket::ticket.ticket_add"
