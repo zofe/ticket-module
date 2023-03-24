@@ -48,4 +48,10 @@ return [
     'closing_criticality'   => 'Criticità problema',
     'change_category'       => 'Cambia Categoria',
     'closing_fields'        => 'campi operatore',
+
+    'user'                  => 'Utente',
+    'company'               => 'Company',
+    'created'               => 'Creato',
+    'last_updated'          => 'Ultimo aggiornamento',
+    'last_message'          => 'Ultimo messaggio'
 ];

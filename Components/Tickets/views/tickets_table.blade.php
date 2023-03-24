@@ -3,7 +3,7 @@
 
         <div class="row gy-4">
             <div class="col-md-6 d-flex align-items-stretch">
-                <x-rpd::card title="stats" >
+                <x-rpd::card title="Stats" >
                     <dl class="row px-2">
                         <dt class="col-9">Aperti</dt><dd class="col-3 text-nowrap text-right">{{ stats_ticket_open() }}</dd>
                         <dt class="col-9">Non Assegnati</dt><dd class="col-3 text-nowrap text-right">{{ stats_ticket_not_assigned() }}</dd>
@@ -16,7 +16,7 @@
 
             <div class="col-md-6 flex-fill">
                 @if(!app()->environment('testing'))
-                    <x-rpd::card bg="transparent" border="secondary">
+                    <x-rpd::card bg="transparent">
                         <livewire:ticket::charts-tickets-month />
                     </x-rpd::card>
                 @endif
@@ -62,9 +62,7 @@
                         @lang('ticket::ticket.subject')
                     </th>
                     <th>
-                        @lang('last_message')
-
-
+                        @lang('ticket::ticket.last_message')
                     </th>
                     <th>
                         @lang('ticket::ticket.status')
@@ -77,7 +75,7 @@
                     </th>
                     <th>
 
-                        @lang('created_at')
+                        @lang('ticket::ticket.created')
 
                     </th>
                     <th>

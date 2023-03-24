@@ -21,10 +21,7 @@
                     label="ticket::ticket.ticket_add"
                     color="primary"
                     target="newTicket"
-{{--                    size="sm"--}}
                 />
-
-{{--                <a href="{{ route('tickets.tickets.edit') }}" class="btn btn-primary">{{ __('ticket::ticket.ticket_add') }}</a>--}}
             </x-slot>
 
 
@@ -35,8 +32,6 @@
                 action="newTicket()"
             >
 
-
-                {{--  <x-rpd::input debounce="350" col="col-md-12" model="ticket_category_id" label="global.category" />--}}
                 <x-rpd::select col="col-md-12" model="ticket_category_id" label="category" :options="$categories" />
                 <x-rpd::input col="col-md-12" debounce="350" model="subject" label="subject" />
 
@@ -69,8 +64,7 @@
                         @lang('ticket::ticket.subject')
                     </th>
                     <th>
-                        @lang('last message')
-
+                        @lang('ticket::ticket.last_message')
                     </th>
                     <th>
                         @lang('ticket::ticket.status')
@@ -82,7 +76,7 @@
                         @lang('user')
                     </th>
                     <th>
-                        @lang('created_at')
+                        @lang('ticket::ticket.created')
                     </th>
 {{--                    <th>--}}
 {{--                        <a wire:click.prevent="sortBy('sla_charge_expiring')" role="button" href="#" class="capitalize text-uppercase">--}}

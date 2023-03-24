@@ -11,21 +11,24 @@
     <div class="row">
 
         <div class="col-md-6">
-            <p class="mb-1"><strong>{{ __('user') }}</strong>: {{ @$ticket->user->fullName }}</p>
-            <p class="mb-1"><strong>{{ config('ticket.user_relation') }}</strong>: {{ $ticket->relation_field }}</p>
-            <p class="mb-1">
-                <strong>{{ __('status') }}</strong>:
+            <p class="mb-1"><strong>{{ __('ticket::ticket.user') }}</strong>: {{ @$ticket->user->fullName }}</p>
+            <p  class="mb-1">
+                <strong>{{ __('ticket::ticket.status') }}</strong>:
                 <span>{{ $ticket->status }}</span>
-
             </p>
+
         </div>
         <div class="col-md-6">
-            <p class="mb-1"> <strong>{{ __('ticket::ticket.category') }}</strong>: {{ @$ticket->category->name?:'-' }}</p>
+            <p class="mb-1">
+                <strong>{{ __('ticket::ticket.category') }}</strong>: {{ @$ticket->category->name?:'-' }}
+            </p>
             <p class="mb-1">
                 <strong>{{ __('ticket::ticket.assigned_to') }}</strong>: {{ @$ticket->agent->fullName?:'-' }}
             </p>
-            <p class="mb-1"> <strong>{{ __('created') }}</strong>: {{ \Carbon\Carbon::parse($ticket->created_at)->diffForHumans() }} <small class="text-gray-500">({{ $ticket->created_at->format('d/m/Y H:i:s') }})</small></p>
-            <p class="mb-1"> <strong>{{ __('last_update') }}</strong>: {{ \Carbon\Carbon::parse($ticket->last_commented_at)->diffForHumans() }} <small class="text-gray-500">({{ $ticket->updated_at->format('d/m/Y H:i:s') }})</small></p>
+            <p class="mb-1"> <strong>{{ __('ticket::ticket.created') }}</strong>:
+                <small class="text-gray-500">({{ $ticket->created_at->format('d/m/Y H:i:s') }})</small></p>
+            <p class="mb-1"> <strong>{{ __('ticket::ticket.last_updated') }}</strong>:
+                <small class="text-gray-500">({{ $ticket->updated_at->format('d/m/Y H:i:s') }})</small></p>
         </div>
     </div>
 
