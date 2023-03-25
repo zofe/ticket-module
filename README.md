@@ -22,9 +22,23 @@ A minimal configuration for your config/auth.php file is:
 ]
 ```
 
+# Layout
+
+Note that this module will install/use layout-module, you may need to do:
+
+```
+cd app/Modules/Layout/
+
+npm i
+npm run dev
+```
+
+this will compile scss and copy css assets to your public project folder
 
 
-this module use livewire charts so you need to publish some assets:
+# Charts 
+
+this module use livewire charts, so you need to publish some assets:
 
 ```bash
 php artisan vendor:publish --tag=livewire-charts:public
