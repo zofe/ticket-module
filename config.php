@@ -15,6 +15,17 @@ return [
     'operators_roles'=>['admin'],
     'notification_email' => 'notification@email.it',
 
+    'ticket_categories' => [
+        ['name' => 'Technical',     'slug' =>'technical'],
+        ['name' => 'Commercial',    'slug' =>'commercial'],
+        ['name' => 'Administrative','slug' =>'administrative'],
+    ],
+    'ticket_closing_categories' => [
+        ['slug' => 'config',                'name' => 'service configuration'],
+        ['slug' => 'commercial',            'name' => 'commercial'],
+        ['slug' => 'administrative',        'name' => 'administrative'],
+        ['slug' => 'other',                 'name' => 'other'],
+    ],
 //    'company_relation' => 'company',
 //    'company_tablename' => 'companies',
 //    'company_fk' => 'company_id',

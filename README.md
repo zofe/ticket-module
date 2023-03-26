@@ -8,6 +8,21 @@ it use layout module and auth module.
 
 # Installation & configuration
 
+Your can require this module in your laravel application using:
+```
+composer require zofe/ticket-module
+
+php artisan migrate 
+```
+
+create a configuration file "ticket.php" in your config folder and customize :
+```
+    'operators_roles'=>['admin'],
+    'notification_email' => 'notification@email.it',
+```
+
+then add roles/permissions in the auth.php configuration file :
+
 By default, tickets can be created by "user" (role) users and managed by "admin" (role) users. 
 A minimal configuration for your config/auth.php file is:
 
@@ -16,11 +31,18 @@ A minimal configuration for your config/auth.php file is:
         'admin' => [
             'view tickets', 'edit tickets',
         ],
-        'customer' => [
+        'user' => [
             'view own tickets', 'edit own tickets',
         ],
 ]
 ```
+
+then you can seed some default data using:
+
+```
+php artisan db:seed --class="App\\Modules\\Ticket\\Database\\Seeders\\TicketCategories"
+```
+
 
 # Layout
 

@@ -16,22 +16,13 @@ class TicketCategories extends Seeder
      */
     public function run()
     {
-        $items = [
-            ['name' => 'Tecnico',       'slug' =>'technical'],
-            ['name' => 'Commerciale',   'slug' =>'commercial'],
-            ['name' => 'Amministrativo','slug' =>'administrative'],
-        ];
+        $items = config('ticket.ticket_categories');
 
         foreach ($items as $item) {
             TicketCategory::create($item);
         }
 
-        TicketClosingCategory::insert([
-            ['slug' => 'config',                'name' => 'configurazione servizio'],
-            ['slug' => 'commercial',            'name' => 'commerciale'],
-            ['slug' => 'administrative',        'name' => 'amministrativo'],
-            ['slug' => 'other',                 'name' => 'altro'],
-        ]);
+        TicketClosingCategory::insert(config('ticket.ticket_closing_categories'));
 
 
     }
