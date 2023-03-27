@@ -53,5 +53,11 @@ return [
     'company'               => 'Company',
     'created'               => 'Creato',
     'last_updated'          => 'Ultimo aggiornamento',
-    'last_message'          => 'Ultimo messaggio'
+    'last_message'          => 'Ultimo messaggio',
+
+    'stats_open'            => 'Aperti',
+    'stats_not_assigned'    => 'Non assegnati',
+    'stats_awaiting'        => 'In attesa',
+    'stats_closed'          => 'Chiusi',
+    'stats_total'           => 'Totale'
 ];

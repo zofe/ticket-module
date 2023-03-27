@@ -53,5 +53,11 @@ return [
     'company'               => 'Company',
     'created'               => 'Created',
     'last_updated'          => 'Last updated',
-    'last_message'          => 'Last message'
+    'last_message'          => 'Last message',
+
+    'stats_open'            => 'Open',
+    'stats_not_assigned'    => 'Not assigned',
+    'stats_awaiting'        => 'In Awaiting',
+    'stats_closed'          => 'Closed',
+    'stats_total'           => 'Total'
 ];

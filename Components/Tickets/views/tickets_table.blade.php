@@ -5,11 +5,11 @@
             <div class="col-md-6 d-flex align-items-stretch">
                 <x-rpd::card title="Stats" >
                     <dl class="row px-2">
-                        <dt class="col-9">Aperti</dt><dd class="col-3 text-nowrap text-right">{{ stats_ticket_open() }}</dd>
-                        <dt class="col-9">Non Assegnati</dt><dd class="col-3 text-nowrap text-right">{{ stats_ticket_not_assigned() }}</dd>
-                        <dt class="col-9">In Attesa</dt><dd class="col-3 text-nowrap text-right">{{ stats_ticket_awaiting() }}</dd>
-                        <dt class="col-9">Chiusi</dt><dd class="col-3 text-nowrap text-right">{{ stats_ticket_closed() }}</dd>
-                        <dt class="col-9">Totale</dt><dd class="col-3 text-nowrap text-right">{{ stats_ticket_sum() }}</dd>
+                        <dt class="col-9">@lang('ticket::ticket.stats_open')</dt><dd class="col-3 text-nowrap text-right">{{ stats_ticket_open() }}</dd>
+                        <dt class="col-9">@lang('ticket::ticket.stats_not_assigned')</dt><dd class="col-3 text-nowrap text-right">{{ stats_ticket_not_assigned() }}</dd>
+                        <dt class="col-9">@lang('ticket::ticket.stats_awaiting')</dt><dd class="col-3 text-nowrap text-right">{{ stats_ticket_awaiting() }}</dd>
+                        <dt class="col-9">@lang('ticket::ticket.stats_closed')</dt><dd class="col-3 text-nowrap text-right">{{ stats_ticket_closed() }}</dd>
+                        <dt class="col-9">@lang('ticket::ticket.stats_total')</dt><dd class="col-3 text-nowrap text-right">{{ stats_ticket_sum() }}</dd>
                     </dl>
                 </x-rpd::card>
             </div>
