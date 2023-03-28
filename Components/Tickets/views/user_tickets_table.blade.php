@@ -1,5 +1,8 @@
 
 <div>
+    <x-rpd::card>
+
+
         <x-rpd::table
             title="ticket::ticket.tickets"
             :items="$items"
@@ -131,6 +134,6 @@
 
 
         </x-rpd::table>
-
+    </x-rpd::card>
 </div>
 
