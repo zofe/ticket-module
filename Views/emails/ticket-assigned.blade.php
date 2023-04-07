@@ -6,7 +6,7 @@ il ticket __{{ $ticket->shortId }}__
 E' stato assegnato a **{{ $agent->fullName }}**
 
 
-Utente: **{{ trim( $user->fullName.' ('.$user->company->business_name.')')}}**
+Utente: **{{ trim( $user->fullName.' '.$ticket->company_name) }}**
 
 Oggetto: **{{ trim($ticket->subject) }}**
 

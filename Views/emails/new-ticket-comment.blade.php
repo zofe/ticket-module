@@ -7,7 +7,7 @@ ID: __{{ $comment->ticket->shortId }}__
 
 Utente: **{{ $user->fullName }}**
 @if($comment->ticket->agent && ($comment->user_id !== $comment->ticket->agent_id))
-    **{{ trim('('.$user->company->business_name.')')}}**
+    {{ trim($comment->ticket->company_name)}}
 @endif
 
 
@@ -18,7 +18,7 @@ Utente: **{{ $user->fullName }}**
 
 
 <br>
-Grazie, il team Uania.<br>
+Grazie, {{ env('APP_NAME', 'laravel') }}
 
 
 @component('mail::button', ['url' =>  route_lang('tickets.tickets.view',  $comment->ticket->id), 'color'=>'secondary'])
@@ -26,6 +26,6 @@ Grazie, il team Uania.<br>
 @endcomponent
 
 <br>
-<small style="color: #b0adc5;">non rispondere per email, leggi/rispondi al ticket su UaniaDesk</small>
+<small style="color: #b0adc5;">non rispondere per email, leggi/rispondi al ticket su {{ env('APP_NAME', 'laravel') }}</small>
 
 @endcomponent

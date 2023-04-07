@@ -5,7 +5,7 @@ abbiamo registrato il ticket:
 
 ID: __{{ $ticket->shortId }}__
 
-Utente: **{{ trim( $user->fullName.' ('.$user->company->business_name.')')}}**
+Utente: **{{ trim( $user->fullName.' '.$ticket->company_name) }}**
 
 Oggetto: **{{ trim($ticket->subject) }}**
 
@@ -17,7 +17,8 @@ Oggetto: **{{ trim($ticket->subject) }}**
 
 <br>
 Prenderemo in carico il ticket a breve,
-il team Uania.
+
+Grazie.
 
 
 @endcomponent

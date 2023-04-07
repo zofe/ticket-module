@@ -294,13 +294,7 @@ class Ticket extends Model
 
     public function getCompanyNameAttribute()
     {
-//        dd(config('ticket.company_relation'),
-//            config('ticket.company_field'),
-//           $this->user,
-//           $this->user->company,
-//        );
-
-        return $this->user->{config('ticket.company_relation')}->{config('ticket.company_field')};
+        return optional($this->user->{config('ticket.company_relation')})->{config('ticket.company_field')};
     }
 
 }
