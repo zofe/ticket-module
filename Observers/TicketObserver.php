@@ -35,7 +35,7 @@ class TicketObserver
         $technician = User::withoutGlobalScopes()->whereEmail(config('ticket.notification_email'))->first();
 
         Notification::send([$technician,$ticket->user], new NewTicket($ticket));
-        Notification::route('telegram', config('services.telegram-chat-tickets'))->notify(new NewTicket($ticket));
+        Notification::route('telegram', config('ticket.telegram-chat-tickets'))->notify(new NewTicket($ticket));
 
         if($ticket->ticket_category_id == 2) {
             $ticket->closing_category = 5;
@@ -52,7 +52,7 @@ class TicketObserver
         if( $ticket->agent_id != $ticket->getOriginal('agent_id')) {
             $agent = User::withoutGlobalScopes()->find($ticket->agent_id);
             Notification::send([$agent], new NewTicketAssigned($ticket, $agent));
-            Notification::route('telegram', config('services.telegram-chat-tickets'))->notify(new NewTicketAssigned($ticket, $agent));
+            Notification::route('telegram', config('ticket.telegram-chat-tickets'))->notify(new NewTicketAssigned($ticket, $agent));
         }
 
         //Chiusura del ticket

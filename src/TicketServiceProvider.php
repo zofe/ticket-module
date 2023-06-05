@@ -54,11 +54,11 @@ class TicketServiceProvider extends ServiceProvider
 
     protected function carbonBusinessTimeInit()
     {
-        BusinessTime::enable(Carbon::class);
-
-        BusinessTime::enable([
-            Carbon::class,
-        ]);
+//        BusinessTime::enable(Carbon::class);
+//
+//        BusinessTime::enable([
+//            Carbon::class,
+//        ]);
 
         // As a second argument you can set default opening hours:
         BusinessTime::enable(Carbon::class, config('ticket.opening_hours'));

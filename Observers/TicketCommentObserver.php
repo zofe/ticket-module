@@ -54,7 +54,7 @@ class TicketCommentObserver
         Notification::send($toArray, new NewTicketComment($comment));
 
         //if(!$comment->user->hasRole(['commercial','technician','admin'])) {
-            Notification::route('telegram', config('services.telegram-chat-tickets'))->notify(new NewTicketComment($comment));
+            Notification::route('telegram', config('ticket.telegram-chat-tickets'))->notify(new NewTicketComment($comment));
         //}
 
     }
